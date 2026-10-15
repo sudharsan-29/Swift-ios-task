@@ -1,0 +1,17 @@
+// Swift programming practice
+
+let a = 20.0
+let b = 5.0
+let operation = "/"
+switch operation {
+case "+": print(a + b)
+case "-": print(a - b)
+case "*": print(a * b)
+case "/":
+    if b == 0 {
+        print("Cannot divide by zero")
+    } else {
+        print(a / b)
+    }
+default: print("Invalid operator")
+}
