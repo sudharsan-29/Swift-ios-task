@@ -1,0 +1,38 @@
+// Swift programming practice
+
+class Book {
+    var title: String
+    init(title: String) {
+        self.title = title
+    }
+}
+class Library {
+    var books: [Book] = []
+
+    func addBook(_ book: Book) {
+        books.append(book)
+    }
+
+    func removeBook(title: String) {
+        books.removeAll { $0.title == title }
+    }
+
+    func searchBook(title: String) -> Book? {
+        return books.first { $0.title == title }
+    }
+
+    func listBooks() {
+        for book in books {
+            print(book.title)
+        }
+    }
+}
+let library = Library()
+library.addBook(Book(title: "Swift Basics"))
+library.addBook(Book(title: "Programming"))
+library.listBooks()
+if let book = library.searchBook(title: "Swift Basics") {
+    print("Found: \(book.title)")
+}
+library.removeBook(title: "Programming")
+library.listBooks()
